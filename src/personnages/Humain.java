@@ -10,7 +10,7 @@ public class Humain {
 		this.boisson_favorite = boisson_favorite;
 		this.argent = argent;
 	}
-	private void parler(String texte) {
+	protected void parler(String texte) {
 		System.out.println(("(" +nom + ")-" + texte ));
 	}
 	
