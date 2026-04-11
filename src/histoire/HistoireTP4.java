@@ -1,21 +1,45 @@
 package histoire;
+
 import personnages.Humain;
 import personnages.Commercant;
+import personnages.Yakuza;
+import personnages.Ronin;
+
 public class HistoireTP4 {
 
-	public static void main(String[] args) {
-		Humain prof = new Humain("Prof", "Kombucha", 54);
-		Commercant marco = new Commercant("Marco", 20);
-		
-		prof.direBonjour();
-		prof.acheter("une boisson", 12);
-		prof.boire();
-		prof.acheter("un jeu", 2);
-		prof.acheter("un kimono", 50);
-		
-		marco.direBonjour();
-		marco.seFaireExtorquer();
-		marco.recevoir(15);
-		marco.boire();
-	}
+    public static void main(String[] args) {
+    
+        Humain prof = new Humain("Prof", "kombucha", 54);
+        Commercant marco = new Commercant("Marco", 20); 
+        Yakuza yaku = new Yakuza("Yaku Le Noir", "whisky", 30, "Warsong"); 
+        Ronin roro = new Ronin("Roro", "shochu", 60);
+        prof.direBonjour();
+        prof.acheter("une boisson", 12);
+        prof.boire();
+        prof.acheter("un jeu", 2);
+        prof.acheter("un kimono", 50);
+
+        System.out.println("\n TEST COMMERCANT ");
+     
+        
+        marco.direBonjour();
+        marco.seFaireExtorquer();
+        marco.recevoir(15);
+        marco.boire();
+
+        System.out.println("\n TEST YAKUZA ");
+      
+        
+        yaku.direBonjour();
+        yaku.extorquer(marco);
+
+        System.out.println("\n TEST RONIN ");
+        
+        roro.direBonjour();
+        roro.donner(marco);
+
+        System.out.println("\n TEST DUEL ");
+       
+        roro.provoquer(yaku);
+    }
 }
