@@ -8,6 +8,13 @@ public class Yakuza extends Humain {
 		super(nom, boissonFavorite, argent);
 		this.clan = clan;
 	}
+	
+	@Override
+	public void direBonjour() {
+		super.direBonjour();
+		System.out.println("Mon clan est celui de " + clan);
+	}
+	
 	public void extorquer(Commercant victime) {
 		parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par là ?");
 		parler(victime.getNom() + ", si tu tiens à la vie donne moi ta vourse !");
@@ -35,5 +42,6 @@ public class Yakuza extends Humain {
 		reputation++;
 		parler("Ce ronin pensait vraiment battre " + getNom() + " du clan de " + clan + " ? Je l'ai dépouillé de ses " + gain + " sous.");
 	}
+	
 	
 }
